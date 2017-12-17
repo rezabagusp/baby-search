@@ -1,0 +1,68 @@
+<!-- <div id="myCarousel" class="carousel slide container" data-ride="carousel"> -->
+  <!-- Indicators -->
+  <!-- <ol class="carousel-indicators">
+    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+    <li data-target="#myCarousel" data-slide-to="1"></li>
+    <li data-target="#myCarousel" data-slide-to="2"></li>
+  </ol>
+ -->
+  <!-- Wrapper for slides -->
+  <!-- <div class="carousel-inner size" >
+    <div class="item active">
+      <img src="assets/img/infosec.jpg"   alt="Los Angeles">
+    </div>
+
+    <div class="item">
+      <img src="assets/img/walkey1.jpg"  alt="Chicago">
+    </div>
+
+    <div class="item">
+      <img src="assets/img/walkey2.jpg"  alt="New York">
+    </div>
+  </div>
+</div> -->
+
+<div class="container">
+  <form (submit)="searchQuery()">
+    <div class="form-group">
+      <div class="row">
+        <div class="col-md-10">
+          <input class="form-control" name="query" [(ngModel)]="query" placeholder="Masukan kata kunci" type="text">
+        </div>
+        <div class="col-md-2">
+          <button type="submit" class="btn btn-primary">Telusuri</button>
+        </div>
+      </div>      
+    </div>
+  </form>
+</div>
+
+<div class="container">
+  Hasil pencarian :  
+  <div class="list-group">
+    <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+      <div class="d-flex w-100 justify-content-between">
+        <h5 class="mb-1">Pengertian Algoritma dan Contoh Algoritma, Lengkap! - WooCara!</h5>
+        <small class="text-muted">3 days ago</small>
+      </div>
+      <p class="mb-1">1. Apakah Itu Algoritma Ditinjau dari asal-usul katanya, kata Algoritma sendiri mempunyai sejarah yang aneh. Orang hanya menemukan kata algorism yang berarti proses menghitung dengan angka arab. Anda dikatakan algorist jika Anda menghitung menggunakan angka arab. Para ahli bahasa berusaha menemukan ...</p>
+    </a>
+
+    <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+      <div class="d-flex w-100 justify-content-between">
+        <h5 class="mb-1">Pintar Algoritme dalam 2 menit ! TERBUKTI !</h5>
+        <small class="text-muted">3 days ago</small>
+      </div>
+      <p class="mb-1">1. Apakah Itu Algoritma Ditinjau dari asal-usul katanya, kata Algoritma sendiri mempunyai sejarah yang aneh. Orang hanya menemukan kata algorism yang berarti proses menghitung dengan angka arab. Anda dikatakan algorist jika Anda menghitung menggunakan angka arab. Para ahli bahasa berusaha menemukan ...</p>
+    </a>
+    <ng-container *ngFor="let i of [1,2,3,4]">
+      <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+        <div class="d-flex w-100 justify-content-between">
+          <h5 class="mb-1">Pengertian Algoritma dan Contoh Algoritma, Lengkap! - WooCara!</h5>
+          <small class="text-muted">3 days ago</small>
+        </div>
+        <p class="mb-1">1. Apakah Itu Algoritma Ditinjau dari asal-usul katanya, kata Algoritma sendiri mempunyai sejarah yang aneh. Orang hanya menemukan kata algorism yang berarti proses menghitung dengan angka arab. Anda dikatakan algorist jika Anda menghitung menggunakan angka arab. Para ahli bahasa berusaha menemukan ...</p>
+      </a>      
+    </ng-container>
+  </div>   
+</div>

@@ -1,0 +1,14 @@
+data hasil crawler --> filtering (regex) --> bikin tiap dok
+jadi vektor,
+kemudian datanya di clustering (k means)
+simpen centroid tiap cluster
+
+
+Spesifikasi IR
+-VSM, pembobotan selain tf idf, rangkingnya pake jarak cosine
+sort descending
+
+sistem kita (web)
+localhost, pake angular.
+
+sistematik hubungan IR dengan web nya pake rest json

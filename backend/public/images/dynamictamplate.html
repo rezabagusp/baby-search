@@ -1,0 +1,328 @@
+<!-- <!DOCTYPE html> -->
+<html>
+	<head>
+		<meta charset="utf8">
+		<title>IPE</title>
+		<style>
+			body {
+				font-size: 8px;
+				font-family: "Times New Roman";
+			}
+			table {
+				border-collapse: collapse;
+				width: 100%
+			}
+			table, th, td {
+				border: 1px solid black;
+			}
+			th {
+				font-size: 8px;
+			}
+			td {
+				font-size: 8px;
+			}
+			.isikegiatan {
+				padding-left: 10px;
+			}
+			.angka {
+				text-align: center;
+			}
+			.identitas {
+				border: 0;
+			}
+
+		</style>
+	</head>
+	<body>
+		<!-- header -->
+		<table style="border: 0;">
+			<tr>
+				<td style="border: 0;" rowspan="4">
+					<img style="padding-left:30px; margin-right: 25px;" src="logo.png" width="70px">
+				</td>
+			</tr>
+			<tr>
+				<td style="border: 0;">
+					<p style="font-size: 24spx; font-weight: bold;">TRANSKRIP KEGIATAN EKSTRA-/KO-KURIKULER MAHASISWA</p>
+				</td>
+			</tr>
+			<tr>
+				<td style="border: 0;">
+					<p style="font-size: 10px">INSTITUT PERTANIAN BOGOR</p>
+				</td>
+			</tr>
+			<tr>
+				<td style="border: 0;">
+					<p style="font-size: 9px">FAKULTAS MATEMATIKA DAN PENGETAHUAN ALAM</p>
+				</td>
+			</tr>
+		</table>
+		<br>
+		<!-- Table identitas mahasiswa -->
+		<table style="width: 95%; margin-left: 30px ; font-weight: bold; border:0;">
+			<tr>
+				<th style="width: 24%; border: 0"></th>
+				<th style="width: 1%; border: 0"></th>
+				<th style="width: 75%; border: 0"></th>
+			</tr>
+			<tr>
+				<td class="identitas">
+					Nama Mahasiswa
+				</td>
+				<td class="identitas">
+					:
+				</td>
+				<td class="identitas">
+					{{Nama}} <!-- Nama Mahasiswa dari database -->
+				</td>
+			</tr>
+			<tr>
+				<td class="identitas">
+					Nomor Induk Mahasiswa
+				</td>
+				<td class="identitas">
+					:
+				</td>
+				<td class="identitas">
+					{{NIM}} <!-- NIM mahasiswa dari database -->
+				</td>
+			</tr>
+			<tr>
+				<td class="identitas">
+					Program Studi
+				</td>
+				<td class="identitas">
+					:
+				</td>
+				<td class="identitas">
+					{{Prodi}} <!-- prodi mahasiswa dari database -->
+				</td>
+			</tr>
+			<tr>
+				<td class="identitas">
+					Tanggal Lulus
+				</td>
+				<td class="identitas">
+					:
+				</td>
+				<td class="identitas">
+					{{Tanggal}} <!-- Tanggal lulus dari database -->
+				</td>
+			</tr>
+		</table>
+		<!-- Table penilaian -->
+		<table style="border: 0">
+			<tr>
+				<th style="width: 3%">No</th>
+				<th style="width: 67%">Kegiatan</th>
+				<th style="width: 10%">Bobot</th>
+				<th style="width: 10%">Jumlah Kegiatan</th>
+				<th style="width: 10%">Skor</th>
+			</tr>
+			<br>
+			{{kategoris}}			
+			<tr>
+				<td style="border:0;"></td>
+				<td style="border:0;"></td>
+				<td style="font-weight: bold" colspan="2" align="center">Jumlah Skor</td>
+				<td style="font-weight: bold" align="center"><!-- Jumlah dari Skor diatas --> {{totalskor}} </td>
+			</tr>
+		</table>
+		<!-- Footer page 1 -->
+		<table style="border: 0">
+			<tr>
+				<th class="identitas" style="width: 11%"></th>
+				<th class="identitas" style="width: 1%"></th>
+				<th class="identitas" style="width: 58%"></th>
+				<th class="identitas" style="width: 30%"></th>
+			</tr>
+			<tr>
+				<th class="identitas" colspan="4">Kategori: {{kesimpulan}} </th>
+			</tr>
+			<tr>
+				<th class="identitas" colspan="3" align="left">Keterangan Kategori:</th>
+				<td class="identitas">Bogor, {{tanggalttd}} </td>
+			</tr>
+			<tr>
+				<td class="identitas">Sangat Baik</td>
+				<td class="identitas">></td>
+				<td class="identitas">40</td>
+				<td class="identitas">Dekan FMIPA</td>
+			</tr>
+			<tr>
+				<td class="identitas">Baik</td>
+				<td class="identitas">:</td>
+				<td class="identitas">20-39</td>
+				<td class="identitas" rowspan="4"><!-- Kosong --></td>
+			</tr>
+			<tr>
+				<td class="identitas">Cukup</td>
+				<td class="identitas">:</td>
+				<td class="identitas">10-19</td>
+			</tr>
+			<tr>
+				<td class="identitas">Kurang</td>
+				<td class="identitas">:</td>
+				<td class="identitas">5-9</td>
+			</tr>
+			<tr>
+				<td class="identitas" style="height: 20px" colspan="4"></td>
+			</tr>
+			<tr>
+				<td class="identitas" colspan="3"><!-- kosong --></td>
+				<td class="identitas">{{namadekan}}</td>
+			</tr>
+			<tr>
+				<td class="identitas" colspan="3"><!-- kosong --></td>
+				<td class="identitas">NIP. {{nipdekan}} </td>
+			</tr>
+		</table>
+		<!-- Next page -->
+		<div style="page-break-after:always;"></div>
+		<!-- Lampiran -->
+		<table style="border: 0">
+			<tr>
+				<th style="border: 0; text-align: left;">Lampiran :</th>
+			</tr>
+			<tr>
+				<td class="identitas">
+					Daftar Kegiatan Ekstra-Kurikuler Mahasiswa
+				</td>
+			</tr>
+			<tr>
+				<td class="identitas">
+					Program {{Prodi}}
+				</td>
+			</tr>
+			<tr>
+				<td class="identitas">
+					Departemen {{Prodi}}
+				</td>
+			</tr>
+			<tr>
+				<td class="identitas">
+					Fakultas Matematika dan Ilmu Pengetahuan Alam, Institut Pertanian Bogor
+				</td>
+			</tr>
+		</table>
+		<br>
+		<!-- Table identitas mahasiswa -->
+		<table style="width: 95%; margin-left: 30px ; font-weight: bold; border:0;">
+			<tr>
+				<th style="width: 24%; border: 0"></th>
+				<th style="width: 1%; border: 0"></th>
+				<th style="width: 75%; border: 0"></th>
+			</tr>
+			<tr>
+				<td class="identitas">
+					Nama Mahasiswa
+				</td>
+				<td class="identitas">
+					:
+				</td>
+				<td class="identitas">
+					{{Nama}} <!-- Nama Mahasiswa dari database -->
+				</td>
+			</tr>
+			<tr>
+				<td class="identitas">
+					Nomor Induk Mahasiswa
+				</td>
+				<td class="identitas">
+					:
+				</td>
+				<td class="identitas">
+					{{NIM}} <!-- NIM mahasiswa dari database -->
+				</td>
+			</tr>
+			<tr>
+				<td class="identitas">
+					Program Studi
+				</td>
+				<td class="identitas">
+					:
+				</td>
+				<td class="identitas">
+					{{Prodi}} <!-- prodi mahasiswa dari database -->
+				</td>
+			</tr>
+			<tr>
+				<td class="identitas">
+					Tanggal Lulus
+				</td>
+				<td class="identitas">
+					:
+				</td>
+				<td class="identitas">
+					{{Tanggal}} <!-- Tanggal lulus dari database -->
+				</td>
+			</tr>
+		</table>
+		<!-- Table bukti -->
+		<table style="border: 0">
+			<tr>
+				<th style="width: 3%; border:0"></th>
+				<th style="width: 3%; border:0"></th>
+				<th style="width: 54%; border:0"></th>
+				<th style="width: 25%; border:0"></th>
+				<th style="width: 5%; border:0"></th>
+				<th style="width: 10%; border:0"></th>
+			</tr>
+			<tr>
+				<th>No</th>
+				<th colspan="2">Kegiatan</th>
+				<th>Waktu</th>
+				<th>Nilai</th>
+				<th>Bukti Fisik (Ada/Tidak)</th>
+			</tr>
+			{{bukti}}			
+			<br>
+			<br>
+			<tr>
+				<td style="border:0;"></td>
+				<td style="border:0;"></td>
+				<td style="border:0;"></td>
+				<td style="font-weight: bold" colspan="1" align="center">Jumlah Skor</td>
+				<td style="font-weight: bold" align="center"><!-- Jumlah dari Skor diatas --> {{totalskor}} </td>
+			</tr>
+		</table>
+		<!-- Footer next page -->
+		<table style="border: 0">
+			<tr>
+				<th class="identitas" style="width: 70%"></th>
+				<th class="identitas" style="width: 30%"></th>
+			</tr>
+			<tr>
+				<th class="identitas" colspan="2">Kategori: {{kesimpulan}} </th>
+			</tr>
+			<tr>
+				<th class="identitas" colspan="2" align="left">
+					Daftar kegiatan ekstra-kurikuler yang saya nyatakan di atas adalah benar saya ikuti dan dibuktikan dengan dokumen yang sah dan dapat dipertanggungjawabkan
+				</th>
+			</tr>
+			<tr>
+				<td class="identitas" colspan="2" align="center">Bogor, {{tanggalttd}} </td>
+			</tr>
+			<tr>
+				<td class="identitas">Yang menyatakan,</td>
+				<td class="identitas">Mengetahui,</td>
+			</tr>
+			<tr>
+				<td class="identitas">Mahasiswa</td>
+				<td class="identitas">Dekan FMIPA</td>
+			</tr>
+			<tr>
+				<td class="identitas" style="height: 20px" colspan="2"><!-- kosong --></td>
+			</tr>
+			<tr>
+				<td class="identitas">{{Nama}}</td>
+				<td class="identitas">{{namadekan}}</td>
+			</tr>
+			<tr>
+				<td class="identitas">{{NIM}}</td>
+				<td class="identitas">NIP. {{nipdekan}} </td>
+			</tr>
+		</table>
+		{{foto_bukti}}
+	</body>
+</html>

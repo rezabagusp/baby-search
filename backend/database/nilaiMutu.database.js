@@ -1,0 +1,41 @@
+var sequelize = require('./../dbconnection');
+var nilaiMutu = sequelize.import(__dirname + '/../models/nilaiMutu.model');
+nilaiMutu.sync().then(()=>{
+	nilaiMutu.bulkCreate([{
+        huruf_mutu:'A',
+        batas_bawah:75,
+        batas_atas:100
+    },
+    {
+        huruf_mutu:'AB',
+        batas_bawah:70,
+        batas_atas:75
+    },
+    {
+        huruf_mutu:'B',
+        batas_bawah:65,
+        batas_atas:70
+    },
+    {
+        huruf_mutu:'BC',
+        batas_bawah:60,
+        batas_atas:65
+    },
+    {
+        huruf_mutu:'C',
+        batas_bawah:55,
+        batas_atas:60
+    },    
+    {
+        huruf_mutu:'D',
+        batas_bawah:50,
+        batas_atas:55
+    }, 
+    {
+        huruf_mutu:'E',
+        batas_bawah:0,
+        batas_atas:50
+	},            
+	]);
+
+});

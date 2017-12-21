@@ -10,9 +10,6 @@ import { AuthenticationService } from './services/authentication.service';
 })
 export class AppComponent {
   title = 'app works!';
-  constructor(public authenticationService: AuthenticationService){
-    this.authenticationService.loggedin.subscribe(state=>{
-      console.log("App "+state);
-    })
+  constructor(){
   }
 }

@@ -37,32 +37,19 @@
   </form>
 </div>
 
-<div class="container">
+<div *ngIf = "query_status" class="container">
   Hasil pencarian :  
-  <div class="list-group">
-    <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
-      <div class="d-flex w-100 justify-content-between">
-        <h5 class="mb-1">Pengertian Algoritma dan Contoh Algoritma, Lengkap! - WooCara!</h5>
-        <small class="text-muted">3 days ago</small>
-      </div>
-      <p class="mb-1">1. Apakah Itu Algoritma Ditinjau dari asal-usul katanya, kata Algoritma sendiri mempunyai sejarah yang aneh. Orang hanya menemukan kata algorism yang berarti proses menghitung dengan angka arab. Anda dikatakan algorist jika Anda menghitung menggunakan angka arab. Para ahli bahasa berusaha menemukan ...</p>
-    </a>
-
-    <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
-      <div class="d-flex w-100 justify-content-between">
-        <h5 class="mb-1">Pintar Algoritme dalam 2 menit ! TERBUKTI !</h5>
-        <small class="text-muted">3 days ago</small>
-      </div>
-      <p class="mb-1">1. Apakah Itu Algoritma Ditinjau dari asal-usul katanya, kata Algoritma sendiri mempunyai sejarah yang aneh. Orang hanya menemukan kata algorism yang berarti proses menghitung dengan angka arab. Anda dikatakan algorist jika Anda menghitung menggunakan angka arab. Para ahli bahasa berusaha menemukan ...</p>
-    </a>
-    <ng-container *ngFor="let i of [1,2,3,4]">
-      <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+  <div *ngIf = "length_doc > 0"  class="list-group">
+    <ng-container *ngFor="let data of result_search; let i = index">
+      <a href="{{data.url}}" class="list-group-item list-group-item-action flex-column align-items-start" target="_blank">
         <div class="d-flex w-100 justify-content-between">
-          <h5 class="mb-1">Pengertian Algoritma dan Contoh Algoritma, Lengkap! - WooCara!</h5>
-          <small class="text-muted">3 days ago</small>
+          <h3 class="mb-1" style="color:blue">{{data.title}}</h3>
+           <small class="text-muted" style="color:green">{{(data.url.length>100)? (data.url | slice:0:100)+'...':(data.url) }}</small> 
         </div>
-        <p class="mb-1">1. Apakah Itu Algoritma Ditinjau dari asal-usul katanya, kata Algoritma sendiri mempunyai sejarah yang aneh. Orang hanya menemukan kata algorism yang berarti proses menghitung dengan angka arab. Anda dikatakan algorist jika Anda menghitung menggunakan angka arab. Para ahli bahasa berusaha menemukan ...</p>
+        <p class="mb-1">{{(data.content.length>200)? (data.content | slice:0:200)+'...':(data.content) }}</p>
       </a>      
     </ng-container>
   </div>   
+  <h5 *ngIf = "length_doc == 0">"Pencarian tidak ditemukan"</h5>
+
 </div>

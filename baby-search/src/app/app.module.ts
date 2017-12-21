@@ -16,6 +16,7 @@ import { LoginComponent } from './login/login.component';
 
 //service
 import { AuthenticationService } from './services/authentication.service';
+import { DataService } from './services/data.service';
 import { FooterComponent } from './footer/footer.component';
 import { TablecaseComponent } from './tablecase/tablecase.component';
 
